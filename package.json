@@ -1,0 +1,23 @@
+{
+  "name": "jurgserver",
+  "version": "1.0.0",
+  "description": "web interface for Jurgenson fuel access control system",
+  "main": "jurgserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PSTWireless/jurg.git"
+  },
+  "author": "Bob Fitzpatrick (PST)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PSTWireless/jurg/issues"
+  },
+  "homepage": "https://github.com/PSTWireless/jurg#readme",
+  "dependencies": {
+    "express": "^4.15.0",
+    "express-handlebars": "^3.0.0"
+  }
+}

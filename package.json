@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/PSTWireless/jurg#readme",
   "dependencies": {
+    "angular": "^1.6.2",
+    "angular-route": "^1.6.2",
     "express": "^4.15.0",
     "express-handlebars": "^3.0.0"
   }

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body ng-app="myApp">
+
+<div ng-controller="myCtrl">
+  <p>Click the button to run a function:</p>
+  <button ng-click="myFunc()">OK</button>
+  <p>The button has been clicked {{count}} times.</p>
+  <p>Click the button to run a function:</p>
+  <button ng-click="yourFunc()">OK</button>
+  <p>The button has been clicked {{counter}} times.</p>
+  
+  	<h2>Vehicle ID: {{vid}}</h2>
+	<h2>Driver: {{driver}}</h2>
+	<h2>Time:  {{dtnow}}</h2>
+    
+    <h2>AngularJS Sample Application</h2>
+   
+
+         <table border = "0">
+            <tr>
+               <td>Enter first name:</td>
+               <td><input type = "text" ng-model = "student.firstName"></td>
+            </tr>
+
+            <tr>
+              <td>Enter last name: </td>
+               <td>
+                  <input type = "text" ng-model = "student.lastName">
+               </td>
+            </tr>
+
+            <tr>
+               <td>Name: </td>
+               <td>{{student.fullName()}}</td>
+            </tr>
+
+            <tr>
+               <td>Subject:</td>
+
+               <td>
+                  <table>
+                     <tr>
+                        <th>Name</th>.
+                        <th>Marks</th>
+                     </tr>
+                     <tr ng-repeat = "subject in student.subjects">
+                        <td>{{ subject.name }}</td>
+                        <td>{{ subject.marks }}</td>
+                     </tr>
+
+                  </table>
+               </td>
+
+            </tr>
+         </table>
+    
+	
+	</div>
+
+<script>
+angular.module('myApp', [])
+  .controller('myCtrl', ['$scope', function($scope) {
+    $scope.count = 0;
+     $scope.counter = 0;
+    $scope.myFunc = function() {
+      $scope.count++;
+    };
+    $scope.yourFunc = function() {
+      $scope.counter++;
+    };
+    $scope.student = {
+               firstName: "Mahesh",
+               lastName: "Parashar",
+               fees:500,
+
+               subjects:[
+                  {name:'Physics',marks:70},
+                  {name:'Chemistry',marks:80},
+                  {name:'Math',marks:65},
+                  {name:'English',marks:75},
+                  {name:'Hindi',marks:67}
+                        ],
+                    fullName: function() {
+                  var studentObject;
+                  studentObject = $scope.student;
+                  return studentObject.firstName + " " + studentObject.lastName;
+               }};   
+          $scope.vid = "Maint-01-Boss";
+          $scope.dtnow= "12:59 3/3/2017";
+          $scope.driver = "Jones";    
+
+  }]);
+</script>
+</body>
+</html>
+

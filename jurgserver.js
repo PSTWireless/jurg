@@ -2,15 +2,13 @@ var express = require('express');
 
 var app = express();
 
-// set up handlebars view engine
-var handlebars = require('express-handlebars')
-	.create({ defaultLayout:'main' });
-app.engine('handlebars', handlebars.engine);
-app.set('view engine', 'handlebars');
-
 app.set('port', process.env.PORT || 3000);
 
 app.use(express.static(__dirname + '/public'));
+
+var tools = require('./lib/tools');
+console.log('type of tools ' + typeof tools.hello); // => 'function'
+console.log("the message returned is " + tools.msg('Molly'));
 
 var fortuneCookies = [
 	"Conquer your fears or they will conquer you.",
@@ -21,7 +19,8 @@ var fortuneCookies = [
 ];
 
 app.get('/', function(req, res) {
-	res.render('home');
+res.sendfile('public/index.html');
+//	res.render('home');
 });
 app.get('/about', function(req,res){
 	var randomFortune = 
